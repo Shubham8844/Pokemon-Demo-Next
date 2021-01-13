@@ -1,0 +1,54 @@
+.title{
+    text-align:center;
+    font-weight: 600;
+    padding:10px;
+}
+
+.container{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.container1{ 
+    margin-top:10px;
+    line-height:9px;
+}
+.container2{
+    margin-top: 15px;
+    margin-left:50px;
+
+}
+
+.details{
+    font-weight:600;
+    padding:1px;
+    font-size: 20px;
+}
+
+.listitem{
+    font-size:18px;
+    
+}
+.types{
+    margin-left:57px;
+}
+.unordered{
+    margin:0;
+}
+.unordered1{
+    margin:0;
+    margin-left:15px;
+    margin-bottom:2px;
+}
+
+.home{
+    
+    font-size: 50px;
+}
+.phome{
+    display:flex;
+    align-items: center;
+    margin-left:165px;
+}

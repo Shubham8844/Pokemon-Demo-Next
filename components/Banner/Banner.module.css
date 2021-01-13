@@ -1,0 +1,41 @@
+.container{
+    margin-top:40px;
+    height:60vh;
+    width:100%;
+}
+
+.container > img{
+    height:100vh;
+    width:100%;
+    
+}
+
+.link{
+    position: absolute;
+    height: 40px;
+    width:150px;
+    margin:auto;
+    padding-top:10px;
+    text-align:center;
+    z-index:10;
+    margin-top:-600px;
+    margin-left:50px;
+    background-color:rgb(83, 70, 196);
+    cursor:pointer;
+    outline:none;
+    border-radius:5px;
+    font-weight: 600;
+    font-size: 20px;
+    transition: ease-in-out;
+    
+    
+}
+
+.link > a{
+    text-decoration: none;
+    color:white;
+}
+
+.link:hover{
+    transform: scale(1.3);
+}
