@@ -5,7 +5,7 @@ import styles from "../styles/pokeman.module.css"
 import Link from "next/link"
 
 function pokeman({pokeman}) {
-    console.log(pokeman)
+    //console.log(pokeman)
     return (
         <Layput title={pokeman.name}>
             <h1 className={styles.title}>{pokeman.name[0].toUpperCase() + pokeman.name.slice(1)}</h1>

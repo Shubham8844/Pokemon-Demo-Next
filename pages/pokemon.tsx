@@ -36,7 +36,7 @@ function pokemon({pokemon}) {
     const [serachItem,setSearchItem]=useState("")
     return (
         <Layout title="Pokedex">
-            <h1 className={styles.title}>Pokedex!!</h1>
+            <h1 className={styles.title}>POKEDEX!!!!</h1>
             <div className={styles.search}>
                 <input type="text" placeholder="Serach..." onChange={e=>setSearchItem(e.target.value)} />
             </div>
@@ -51,7 +51,7 @@ function pokemon({pokemon}) {
                     
                 }).map((pokeman,index)=>{
                     let realIndex=(pokeman.image.split("/")[6].split(".")[0]).replace(/^0+/,"")
-                    console.log(`pokeman?id=${realIndex}`)
+                    //console.log(`pokeman?id=${realIndex}`)
                     return(<li className={styles.container} key={index}>
                         <Link href={`pokeman?id=${realIndex}`}>
                             <a className={styles.pokemon__anchor}>
