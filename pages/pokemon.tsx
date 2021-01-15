@@ -3,6 +3,7 @@ import styles from "../styles/poke.module.css"
 import {GetStaticProps} from "next"
 import Layout from '../components/Layout/Layout'
 import Link from 'next/link'
+import { KeyboardArrowDownRounded, KeyboardArrowUpRounded } from '@material-ui/icons'
 
 
 
@@ -29,19 +30,73 @@ export const getStaticProps:GetStaticProps=async (context)=>{
    
     }
   
-  
+const orderBy=(pokemon,value,direction)=>{
+    if(direction=="asc"){
+        return [...pokemon].sort((a,b)=>(a[value]>b[value] ? 1 :-1))
+    }
+    if(direction="desc"){
+        return [...pokemon].sort((a,b)=>(a[value]>b[value] ? -1 : 1))
+    }
+
+    return pokemon
+}
+
+const SortArrow=({direction})=>{
+    if(!direction){
+        return <></>
+    }
+    else if(direction==="desc"){
+        return(
+            <div className={styles.arrow}>
+                <KeyboardArrowDownRounded color="inherit"/>
+            </div>
+        )
+    }
+    else{
+        return(
+            <div className={styles.arrow}>
+                <KeyboardArrowUpRounded color="inherit"/>
+            </div>
+        )
+    }
+    }
 
 function pokemon({pokemon}) {
     //console.log(pokemon)
-    const [serachItem,setSearchItem]=useState("")
+    
+    const [serachItem,setSearchItem]=useState("");
+    const [direction, setdirection] = useState("");
+    const [value, setvalue] = useState("");
+    const orderedPokemon=orderBy(pokemon,value,direction);
+    const switchDirection=()=>{
+        if(!direction){
+            setdirection("desc")
+        }
+        else if(direction=="desc"){
+            setdirection("asc")
+        }
+        else{
+            setdirection(null)
+        }
+
+    }
+    const setValueandDirection=(value)=>{
+        switchDirection();
+        setvalue(value);
+    }
     return (
         <Layout title="Pokedex">
             <h1 className={styles.title}>POKEDEX!!!!</h1>
+            <div className={styles.container_search}>
             <div className={styles.search}>
-                <input type="text" placeholder="Serach..." onChange={e=>setSearchItem(e.target.value)} />
+                <input type="text" placeholder="Search..." onChange={e=>setSearchItem(e.target.value)} />
+            </div>
+                <button className={styles.container_button} onClick={()=>setValueandDirection("name")}><div>Name</div>
+                    <SortArrow direction={direction}/>
+                </button>
             </div>
             <ul className={styles.maincontainer}>
-                {pokemon.filter((pokeman,index)=>{
+                {orderedPokemon.filter((pokeman,index)=>{
                     if(serachItem==""){
                         return pokeman
                     }

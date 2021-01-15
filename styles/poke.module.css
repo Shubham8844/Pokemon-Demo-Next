@@ -4,6 +4,25 @@
     padding:5px;
     font-weight:600px;
 }
+.container_search{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.container_button{
+    margin-left:5px;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    background-color:#ffffff;
+    border:none;
+    cursor:pointer;
+    outline:none;
+}
+.arrow{
+    color:chartreuse
+}
 .pokemon__anchor{
     display:flex;
     
