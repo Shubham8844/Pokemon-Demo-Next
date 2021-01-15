@@ -4,6 +4,8 @@ import {GetStaticProps} from "next"
 import Layout from '../components/Layout/Layout'
 import Link from 'next/link'
 import { KeyboardArrowDownRounded, KeyboardArrowUpRounded } from '@material-ui/icons'
+import NavBar from '../components/NavBar/NavBar'
+import Footer from '../components/Footer/Footer'
 
 
 
@@ -85,7 +87,10 @@ function pokemon({pokemon}) {
         setvalue(value);
     }
     return (
+        <>
+        <NavBar />
         <Layout title="Pokedex">
+            
             <h1 className={styles.title}>POKEDEX!!!!</h1>
             <div className={styles.container_search}>
             <div className={styles.search}>
@@ -118,8 +123,10 @@ function pokemon({pokemon}) {
                     </li>
                 )})}
             </ul>
-            
+          
         </Layout>
+        <Footer />
+        </>
     )
 }
 

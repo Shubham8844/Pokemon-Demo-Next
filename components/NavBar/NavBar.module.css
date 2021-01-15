@@ -20,6 +20,7 @@
     position:fixed;
     width:80px;
     object-fit: contain;
+    background-color: black;
   }
   .nav__avatar{
     position: fixed;

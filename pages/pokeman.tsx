@@ -1,13 +1,17 @@
 import { GetServerSideProps } from 'next'
 import React from 'react'
-import Layput from "../components/Layout/Layout"
+import Layout from "../components/Layout/Layout"
 import styles from "../styles/pokeman.module.css"
 import Link from "next/link"
+import NavBar from '../components/NavBar/NavBar'
+import Footer from '../components/Footer/Footer'
 
 function pokeman({pokeman}) {
     //console.log(pokeman)
     return (
-        <Layput title={pokeman.name}>
+        <>
+        <NavBar />
+        <Layout title={pokeman.name}>
             <h1 className={styles.title}>{pokeman.name[0].toUpperCase() + pokeman.name.slice(1)}</h1>
 
             <img src={`https://${pokeman.image}`} alt={pokeman.name} />
@@ -42,7 +46,9 @@ function pokeman({pokeman}) {
             </Link>
             </p>
             
-        </Layput>
+        </Layout>
+        <Footer />
+        </>
     )
 }
 export const getServerSideProps:GetServerSideProps=async ({query})=>{
