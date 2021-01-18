@@ -12,8 +12,8 @@
     background-color: black;
     
   }
-  .nav__black{
-    background-color:#111 !important
+  .nav__white{
+    background-color:transparent;
   }
   .nav__logo{
     left:20px;

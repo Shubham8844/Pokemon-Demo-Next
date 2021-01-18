@@ -13,6 +13,7 @@ function Layout({title,children}) {
             <main className={styles.layout__main}>
                 {children}
             </main>
+            
         </div>
     )
 }
